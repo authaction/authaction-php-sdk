@@ -65,7 +65,7 @@ class JwtVerifierTest extends TestCase
     // ── Helper ─────────────────────────────────────────────────────────────────
 
     /** Returns a JwtVerifier with verify() stubbed to return $result (or throw). */
-    private function createMockVerifier(object|\Throwable $result): JwtVerifier
+    private function createMockVerifier(object $result): JwtVerifier
     {
         $mock = $this->getMockBuilder(JwtVerifier::class)
             ->setConstructorArgs([self::DOMAIN, self::AUDIENCE])
