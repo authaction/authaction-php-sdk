@@ -50,6 +50,30 @@ class AuthAction
     }
 
     /**
+     * Alias for verifyRequest — verify from an Authorization header value.
+     */
+    public function verifyFromHeader(?string $authorizationHeader): ?object
+    {
+        return $this->verifier->verifyRequest($authorizationHeader);
+    }
+
+    /**
+     * Factory: create an AuthActionClient from a config array.
+     */
+    public static function createClient(array $config): AuthActionClient
+    {
+        return new AuthActionClient($config);
+    }
+
+    /**
+     * Factory: create an Auth instance from a config array.
+     */
+    public static function createAuth(array $config): Auth
+    {
+        return new Auth($config);
+    }
+
+    /**
      * Returns a configured PSR-15 middleware instance.
      */
     public function psrMiddleware(): PsrMiddleware

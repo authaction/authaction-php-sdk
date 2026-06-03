@@ -4,11 +4,11 @@ declare(strict_types=1);
 
 namespace AuthAction;
 
-final readonly class AuthorizationUrlResult
+final class AuthorizationUrlResult
 {
     public function __construct(
-        public string $url,
-        public string $state,
-        public string $codeVerifier,
+        public readonly string $url,
+        public readonly string $state,
+        public readonly string $codeVerifier,
     ) {}
 }
